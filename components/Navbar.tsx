@@ -6,6 +6,7 @@ const navLinks = [
   { label: "Home", href: "/#home" },
   { label: "About", href: "/#about" },
   { label: "Skills", href: "/#skills" },
+  { label: "Experience", href: "/#experience" },
   { label: "Projects", href: "/#projects" },
   { label: "Contact", href: "/#contact" },
 ]
@@ -20,7 +21,7 @@ export default function Navbar() {
       setIsScrolled(window.scrollY > 50)
 
       // Detect active section
-      const sections = ["home", "about", "skills", "projects", "contact"]
+      const sections = ["home", "about", "skills", "experience", "projects", "contact"]
       for (const id of sections.reverse()) {
         const el = document.getElementById(id)
         if (el) {
@@ -60,7 +61,7 @@ export default function Navbar() {
           href="/"
           className="text-xl font-bold tracking-tight transition-colors duration-300"
         >
-          <span className="gradient-text">Portfolio</span>
+          <span className="gradient-text">Fauzi</span>
           <span className="text-white/40">.</span>
         </a>
 

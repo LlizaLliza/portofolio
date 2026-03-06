@@ -4,37 +4,37 @@ import { useEffect, useRef, useState } from "react"
 
 const projects = [
   {
-    title: "E-Commerce Platform",
+    title: "Sistem Informasi Akademik (SIAKAD)",
     description:
-      "A full-featured e-commerce platform with cart, checkout, and payment integration. Built with modern web technologies.",
-    tags: ["Next.js", "TypeScript", "Tailwind", "Stripe"],
+      "Sistem informasi akademik lengkap untuk pengelolaan data mahasiswa, dosen, KRS, KHS, nilai, dan pelaporan akreditasi BAN-PT.",
+    tags: ["Laravel", "PHP", "MySQL", "Bootstrap"],
     gradient: "from-violet-600 to-indigo-600",
     github: "https://github.com",
     demo: "#",
   },
   {
-    title: "Task Management App",
+    title: "E-Learning LMS Moodle",
     description:
-      "Collaborative task management application with real-time updates, drag & drop, and team features.",
-    tags: ["React", "Node.js", "MongoDB", "Socket.io"],
+      "Kustomisasi dan pengelolaan LMS Moodle untuk mendukung kegiatan E-Learning yang efektif dan user-friendly di lingkungan kampus.",
+    tags: ["PHP", "Moodle", "MySQL", "CSS"],
     gradient: "from-cyan-600 to-blue-600",
     github: "https://github.com",
     demo: "#",
   },
   {
-    title: "Weather Dashboard",
+    title: "Game Prototype 2D",
     description:
-      "Beautiful weather dashboard with location search, 7-day forecast, and interactive weather maps.",
-    tags: ["React", "REST API", "Chart.js", "CSS"],
+      "Proyek game prototype 2D yang dikembangkan dalam program Agate Academy & ICE Institute menggunakan Unity dan C# dengan metodologi Agile/Scrum.",
+    tags: ["Unity", "C#", "Git", "Agile"],
     gradient: "from-orange-500 to-rose-600",
     github: "https://github.com",
     demo: "#",
   },
   {
-    title: "Social Media App",
+    title: "Sistem Data Akreditasi",
     description:
-      "Social media platform clone with user authentication, posts, comments, and real-time notifications.",
-    tags: ["Next.js", "PostgreSQL", "Prisma", "Auth"],
+      "Aplikasi pendukung Tim Borang Akreditasi Institusi untuk menyiapkan, memvalidasi, dan menganalisis data akademik sesuai standar BAN-PT.",
+    tags: ["Laravel", "MySQL", "REST API", "Bootstrap"],
     gradient: "from-pink-500 to-purple-600",
     github: "https://github.com",
     demo: "#",
@@ -42,17 +42,17 @@ const projects = [
   {
     title: "Portfolio Website",
     description:
-      "Personal portfolio website showcasing projects and skills with smooth animations and modern design.",
-    tags: ["Next.js", "Tailwind", "TypeScript", "Vercel"],
+      "Website portfolio personal dengan animasi halus, dark theme glassmorphism, dan desain responsif modern yang dibangun dengan Next.js.",
+    tags: ["Next.js", "TypeScript", "Tailwind", "React"],
     gradient: "from-emerald-500 to-teal-600",
     github: "https://github.com",
     demo: "#",
   },
   {
-    title: "REST API Service",
+    title: "Aplikasi Web Sekolah",
     description:
-      "Scalable REST API with authentication, rate limiting, documentation, and comprehensive testing.",
-    tags: ["Node.js", "Express", "JWT", "Docker"],
+      "Sistem informasi sekolah berbasis web untuk pengelolaan data siswa, jadwal pelajaran, dan informasi akademik menggunakan CodeIgniter.",
+    tags: ["CodeIgniter", "PHP", "MySQL", "Bootstrap"],
     gradient: "from-amber-500 to-orange-600",
     github: "https://github.com",
     demo: "#",
@@ -91,10 +91,10 @@ export default function ProjectsSection() {
             My Work
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mt-3">
-            Featured <span className="gradient-text">Projects</span>
+            Project <span className="gradient-text">Unggulan</span>
           </h2>
           <p className="text-muted mt-4 max-w-xl mx-auto">
-            Here are some of the projects I&apos;ve worked on recently
+            Beberapa project yang pernah saya kerjakan
           </p>
         </div>
 
@@ -193,7 +193,7 @@ export default function ProjectsSection() {
           }`}
         >
           <a href="/projects" className="btn-secondary text-sm">
-            View All Projects
+            Lihat Semua Project
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M5 12h14"/>
               <path d="m12 5 7 7-7 7"/>

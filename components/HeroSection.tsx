@@ -3,10 +3,10 @@
 import { useState, useEffect } from "react"
 
 const roles = [
-  "Frontend Developer",
-  "UI/UX Designer",
-  "Full Stack Developer",
-  "Creative Coder",
+  "Web Developer",
+  "IT Support Specialist",
+  "Laravel & CI Developer",
+  "Game Programmer",
 ]
 
 export default function HeroSection() {
@@ -72,13 +72,13 @@ export default function HeroSection() {
         {/* Badge */}
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border border-white/10 mb-8 animate-fade-in-up">
           <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-          <span className="text-sm text-muted">Available for Work</span>
+          <span className="text-sm text-muted">Open to Opportunities</span>
         </div>
 
         {/* Name */}
         <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-6 animate-fade-in-up delay-100">
           Hi, I&apos;m{" "}
-          <span className="gradient-text">Your Name</span>
+          <span className="gradient-text">Uki Aula Fauzi</span>
         </h1>
 
         {/* Typing Role */}
@@ -94,8 +94,8 @@ export default function HeroSection() {
 
         {/* Description */}
         <p className="text-muted text-lg md:text-xl max-w-2xl mx-auto mb-12 animate-fade-in-up delay-300 leading-relaxed">
-          Crafting beautiful, performant, and user-centric digital experiences
-          with modern web technologies.
+          Membangun sistem informasi akademik & aplikasi web yang efisien
+          dengan PHP, Laravel, CodeIgniter, dan teknologi modern lainnya.
         </p>
 
         {/* CTA Buttons */}
@@ -106,14 +106,14 @@ export default function HeroSection() {
               <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/>
               <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/>
             </svg>
-            View Projects
+            Lihat Project
           </a>
           <a href="#contact" className="btn-secondary text-base">
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <rect width="20" height="16" x="2" y="4" rx="2"/>
               <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
             </svg>
-            Contact Me
+            Hubungi Saya
           </a>
         </div>
       </div>

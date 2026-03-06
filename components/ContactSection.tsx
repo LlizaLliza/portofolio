@@ -74,10 +74,10 @@ export default function ContactSection() {
             Get in Touch
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mt-3">
-            Let&apos;s <span className="gradient-text">Connect</span>
+            Mari <span className="gradient-text">Terhubung</span>
           </h2>
           <p className="text-muted mt-4 max-w-xl mx-auto">
-            Have a project in mind or want to collaborate? Feel free to reach out!
+            Punya project atau ingin berkolaborasi? Jangan ragu untuk menghubungi saya!
           </p>
         </div>
 
@@ -118,8 +118,8 @@ export default function ContactSection() {
             {/* Extra message */}
             <div className="glass rounded-2xl p-6 text-center">
               <p className="text-muted text-sm leading-relaxed">
-                I&apos;m always open to discussing new projects, creative ideas,
-                or opportunities to be part of your vision.
+                Saya selalu terbuka untuk diskusi mengenai project baru,
+                ide kreatif, atau kesempatan kolaborasi.
               </p>
             </div>
           </div>
@@ -200,7 +200,7 @@ export default function ContactSection() {
                   <path d="m22 2-7 20-4-9-9-4Z"/>
                   <path d="M22 2 11 13"/>
                 </svg>
-                Send Message
+                Kirim Pesan
               </button>
             </form>
           </div>

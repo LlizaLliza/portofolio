@@ -3,10 +3,10 @@
 import { useEffect, useRef, useState } from "react"
 
 const stats = [
-  { label: "Years Experience", value: "2+" },
-  { label: "Projects Completed", value: "15+" },
-  { label: "Technologies", value: "10+" },
-  { label: "Happy Clients", value: "10+" },
+  { label: "Tahun Pengalaman", value: "3+" },
+  { label: "Project Selesai", value: "5+" },
+  { label: "Teknologi", value: "10+" },
+  { label: "Sertifikat", value: "5+" },
 ]
 
 export default function AboutSection() {
@@ -37,7 +37,7 @@ export default function AboutSection() {
             About Me
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mt-3">
-            Get to Know <span className="gradient-text">Me</span>
+            Tentang <span className="gradient-text">Saya</span>
           </h2>
         </div>
 
@@ -55,9 +55,9 @@ export default function AboutSection() {
               <div className="relative rounded-3xl overflow-hidden glass border border-white/10 aspect-square flex items-center justify-center">
                 <div className="text-center p-8">
                   <div className="w-32 h-32 mx-auto rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center mb-6">
-                    <span className="text-5xl font-bold text-white">YN</span>
+                    <span className="text-5xl font-bold text-white">UA</span>
                   </div>
-                  <p className="text-muted text-sm">Add your photo here</p>
+                  <p className="text-muted text-sm">Uki Aula Fauzi</p>
                 </div>
               </div>
               {/* Floating decorations */}
@@ -68,7 +68,7 @@ export default function AboutSection() {
                 className="absolute -bottom-4 -left-4 w-16 h-16 rounded-2xl glass border border-secondary/20 flex items-center justify-center animate-float"
                 style={{ animationDelay: "1s" }}
               >
-                <span className="text-xl">🎨</span>
+                <span className="text-xl">⚙️</span>
               </div>
             </div>
           </div>
@@ -80,36 +80,39 @@ export default function AboutSection() {
             }`}
           >
             <h3 className="text-2xl font-semibold mb-4">
-              A Passionate Developer & Designer
+              Web Developer & IT Specialist
             </h3>
             <div className="space-y-4 text-muted leading-relaxed">
               <p>
-                I&apos;m a passionate fullstack developer based in Indonesia,
-                dedicated to creating beautiful and functional web applications
-                that make a difference.
+                Sebagai Web Developer dengan latar belakang kuat di Informatika,
+                saya memiliki spesialisasi dalam membangun dan mengelola sistem
+                informasi akademik serta aplikasi berbasis web yang efisien.
               </p>
               <p>
-                With a strong foundation in modern web technologies, I love
-                turning complex problems into simple, elegant solutions. My
-                approach combines clean code with stunning visual design.
+                Saya berpengalaman sebagai staf IT & Programmer di lingkungan
+                perguruan tinggi, bertanggung jawab atas pengembangan ekosistem
+                digital kampus mulai dari Sistem Informasi Akademik (SIAKAD)
+                hingga pengelolaan LMS Moodle. Terbiasa bekerja secara fleksibel
+                menggunakan Laravel, CodeIgniter, dan PHP Native.
               </p>
               <p>
-                When I&apos;m not coding, you can find me exploring new
-                technologies, contributing to open-source projects, or
-                perfecting my design skills.
+                Sebelum fokus pada pengembangan web, saya menajamkan logika
+                algoritma dan kreativitas melalui pengalaman intensif sebagai
+                Game Programmer (Unity/C#) di Agate Academy dan ICE Institute.
+                Pengalaman ini membentuk kemampuan problem-solving yang adaptif.
               </p>
             </div>
 
             {/* CTA */}
             <div className="flex gap-4 mt-8">
               <a href="#contact" className="btn-primary text-sm">
-                Let&apos;s Talk
+                Hubungi Saya
               </a>
               <a
                 href="#projects"
                 className="btn-secondary text-sm"
               >
-                See My Work
+                Lihat Karya
               </a>
             </div>
           </div>

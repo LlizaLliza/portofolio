@@ -8,11 +8,11 @@ const skillCategories = [
     icon: "🎨",
     color: "from-primary to-purple-400",
     skills: [
-      { name: "React / Next.js", level: 90 },
-      { name: "TypeScript", level: 85 },
-      { name: "Tailwind CSS", level: 90 },
-      { name: "HTML / CSS", level: 95 },
-      { name: "JavaScript", level: 90 },
+      { name: "HTML / CSS", level: 90 },
+      { name: "JavaScript", level: 80 },
+      { name: "Bootstrap", level: 85 },
+      { name: "Tailwind CSS", level: 75 },
+      { name: "React / Next.js", level: 60 },
     ],
   },
   {
@@ -20,11 +20,11 @@ const skillCategories = [
     icon: "⚙️",
     color: "from-secondary to-cyan-400",
     skills: [
-      { name: "Node.js", level: 80 },
-      { name: "Express.js", level: 75 },
-      { name: "REST APIs", level: 85 },
-      { name: "PostgreSQL", level: 70 },
-      { name: "MongoDB", level: 75 },
+      { name: "PHP Native", level: 90 },
+      { name: "Laravel", level: 85 },
+      { name: "CodeIgniter", level: 85 },
+      { name: "MySQL", level: 85 },
+      { name: "REST API", level: 75 },
     ],
   },
   {
@@ -32,11 +32,11 @@ const skillCategories = [
     icon: "🛠️",
     color: "from-accent to-pink-400",
     skills: [
-      { name: "Git / GitHub", level: 85 },
-      { name: "Figma", level: 80 },
+      { name: "Git / GitHub", level: 80 },
+      { name: "Unity / C#", level: 70 },
+      { name: "Moodle LMS", level: 80 },
       { name: "VS Code", level: 90 },
-      { name: "Docker", level: 60 },
-      { name: "Vercel", level: 85 },
+      { name: "Linux Server", level: 70 },
     ],
   },
 ]
@@ -76,10 +76,10 @@ export default function SkillsSection() {
             My Skills
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mt-3">
-            Technologies I <span className="gradient-text">Work With</span>
+            Teknologi yang Saya <span className="gradient-text">Kuasai</span>
           </h2>
           <p className="text-muted mt-4 max-w-xl mx-auto">
-            Constantly learning and improving my craft across the full stack
+            Terus belajar dan mengembangkan kemampuan di berbagai stack teknologi
           </p>
         </div>
 

@@ -15,10 +15,10 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Portfolio — Frontend Developer & UI Designer",
+  title: "Uki Aula Fauzi — PHP Web Developer & IT Specialist",
   description:
-    "Personal portfolio showcasing my projects, skills, and experience as a passionate fullstack developer. Built with Next.js & Tailwind CSS.",
-  keywords: ["portfolio", "developer", "frontend", "react", "nextjs", "web developer"],
+    "Portfolio Uki Aula Fauzi — PHP Web Developer (Laravel, CodeIgniter, Native), IT Support Specialist, dan Game Developer. Berpengalaman membangun sistem informasi akademik dan aplikasi web.",
+  keywords: ["portfolio", "php developer", "laravel", "codeigniter", "web developer", "game developer", "IT support"],
 };
 
 export default function RootLayout({
@@ -27,9 +27,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background text-foreground`}
+        suppressHydrationWarning
       >
         <Navbar />
         <main>{children}</main>

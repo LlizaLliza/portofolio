@@ -4,40 +4,40 @@ import { useEffect, useRef, useState } from "react"
 
 const allProjects = [
   {
-    title: "E-Commerce Platform",
+    title: "Sistem Informasi Akademik (SIAKAD)",
     description:
-      "A full-featured e-commerce platform with shopping cart, checkout flow, payment integration, and admin dashboard for product management.",
-    tags: ["Next.js", "TypeScript", "Tailwind", "Stripe", "PostgreSQL"],
+      "Sistem informasi akademik lengkap untuk pengelolaan data mahasiswa, dosen, KRS, KHS, nilai, dan pelaporan akreditasi BAN-PT. Dibangun dengan arsitektur MVC.",
+    tags: ["Laravel", "PHP", "MySQL", "Bootstrap", "REST API"],
     gradient: "from-violet-600 to-indigo-600",
     github: "https://github.com",
     demo: "#",
     category: "Full Stack",
   },
   {
-    title: "Task Management App",
+    title: "E-Learning LMS Moodle",
     description:
-      "Collaborative task management application with real-time updates, drag & drop interface, team assignments, and progress tracking.",
-    tags: ["React", "Node.js", "MongoDB", "Socket.io", "Redux"],
+      "Kustomisasi dan pengelolaan LMS Moodle untuk mendukung kegiatan E-Learning yang efektif dan user-friendly di lingkungan kampus.",
+    tags: ["PHP", "Moodle", "MySQL", "CSS", "Linux"],
     gradient: "from-cyan-600 to-blue-600",
     github: "https://github.com",
     demo: "#",
     category: "Full Stack",
   },
   {
-    title: "Weather Dashboard",
+    title: "Game Prototype 2D",
     description:
-      "Beautiful weather dashboard with location search, 7-day forecast, interactive maps, air quality index, and weather alerts.",
-    tags: ["React", "REST API", "Chart.js", "CSS", "Geolocation"],
+      "Proyek game prototype 2D yang dikembangkan di Agate Academy & ICE Institute menggunakan Unity dan C# dengan metodologi Agile/Scrum.",
+    tags: ["Unity", "C#", "Git", "Agile", "Game Design"],
     gradient: "from-orange-500 to-rose-600",
     github: "https://github.com",
     demo: "#",
-    category: "Frontend",
+    category: "Game Dev",
   },
   {
-    title: "Social Media App",
+    title: "Sistem Data Akreditasi",
     description:
-      "Social media platform clone with user authentication, posts, comments, likes, follow system, and real-time notifications.",
-    tags: ["Next.js", "PostgreSQL", "Prisma", "NextAuth", "Cloudinary"],
+      "Aplikasi pendukung Tim Borang Akreditasi Institusi untuk menyiapkan, memvalidasi, dan menganalisis data akademik sesuai standar BAN-PT.",
+    tags: ["Laravel", "MySQL", "REST API", "Bootstrap", "Chart.js"],
     gradient: "from-pink-500 to-purple-600",
     github: "https://github.com",
     demo: "#",
@@ -46,46 +46,46 @@ const allProjects = [
   {
     title: "Portfolio Website",
     description:
-      "Personal portfolio website with smooth animations, responsive design, dark theme, and contact form integration.",
-    tags: ["Next.js", "Tailwind", "TypeScript", "Vercel"],
+      "Website portfolio personal dengan animasi halus, dark theme glassmorphism, dan desain responsif modern.",
+    tags: ["Next.js", "TypeScript", "Tailwind", "React"],
     gradient: "from-emerald-500 to-teal-600",
     github: "https://github.com",
     demo: "#",
     category: "Frontend",
   },
   {
-    title: "REST API Service",
+    title: "Aplikasi Web Sekolah",
     description:
-      "Scalable REST API with JWT authentication, rate limiting, API documentation with Swagger, comprehensive testing, and Docker deployment.",
-    tags: ["Node.js", "Express", "JWT", "Docker", "Jest"],
+      "Sistem informasi sekolah berbasis web untuk pengelolaan data siswa, jadwal pelajaran, dan informasi akademik.",
+    tags: ["CodeIgniter", "PHP", "MySQL", "Bootstrap"],
     gradient: "from-amber-500 to-orange-600",
+    github: "https://github.com",
+    demo: "#",
+    category: "Full Stack",
+  },
+  {
+    title: "Landing Page Campaign",
+    description:
+      "Landing page modern dan responsif untuk keperluan kampanye digital dengan desain yang menarik dan performa tinggi.",
+    tags: ["HTML", "CSS", "JavaScript", "Bootstrap"],
+    gradient: "from-sky-500 to-blue-600",
+    github: "https://github.com",
+    demo: "#",
+    category: "Frontend",
+  },
+  {
+    title: "REST API Backend",
+    description:
+      "Backend API service untuk aplikasi web dengan autentikasi JWT, validasi data, dan dokumentasi endpoint yang lengkap.",
+    tags: ["Laravel", "PHP", "MySQL", "JWT", "Postman"],
+    gradient: "from-lime-500 to-green-600",
     github: "https://github.com",
     demo: "#",
     category: "Backend",
   },
-  {
-    title: "Chat Application",
-    description:
-      "Real-time chat application with room support, file sharing, typing indicators, read receipts, and message search.",
-    tags: ["React", "Socket.io", "Node.js", "MongoDB", "Redis"],
-    gradient: "from-sky-500 to-blue-600",
-    github: "https://github.com",
-    demo: "#",
-    category: "Full Stack",
-  },
-  {
-    title: "Blog CMS",
-    description:
-      "Content management system with markdown editor, image upload, categories, SEO optimization, and analytics dashboard.",
-    tags: ["Next.js", "MDX", "Prisma", "PostgreSQL", "S3"],
-    gradient: "from-lime-500 to-green-600",
-    github: "https://github.com",
-    demo: "#",
-    category: "Full Stack",
-  },
 ]
 
-const categories = ["All", "Full Stack", "Frontend", "Backend"]
+const categories = ["All", "Full Stack", "Frontend", "Backend", "Game Dev"]
 
 export default function ProjectsPage() {
   const [activeCategory, setActiveCategory] = useState("All")
@@ -118,13 +118,13 @@ export default function ProjectsPage() {
               <path d="m12 19-7-7 7-7"/>
               <path d="M19 12H5"/>
             </svg>
-            Back to Home
+            Kembali ke Home
           </a>
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold">
-            All <span className="gradient-text">Projects</span>
+            Semua <span className="gradient-text">Project</span>
           </h1>
           <p className="text-muted mt-4 text-lg max-w-2xl">
-            A comprehensive collection of my work spanning frontend, backend, and full-stack development.
+            Koleksi lengkap karya saya di bidang frontend, backend, full-stack, dan game development.
           </p>
         </div>
 

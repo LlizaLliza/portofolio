@@ -1,3 +1,5 @@
+"use client"
+
 export default function Footer() {
   const currentYear = new Date().getFullYear()
 
@@ -42,11 +44,11 @@ export default function Footer() {
           {/* Logo */}
           <div className="text-center md:text-left">
             <a href="/" className="text-xl font-bold">
-              <span className="gradient-text">Portfolio</span>
+              <span className="gradient-text">Uki</span>
               <span className="text-white/40">.</span>
             </a>
             <p className="text-muted text-sm mt-2">
-              Building digital experiences with passion.
+              PHP Web Developer & IT Specialist.
             </p>
           </div>
 
