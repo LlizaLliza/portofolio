@@ -41,80 +41,49 @@ export default function AboutSection() {
           </h2>
         </div>
 
-        {/* Content Grid */}
-        <div className="grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
-          {/* Avatar / Visual Side */}
-          <div
-            className={`relative transition-all duration-700 delay-200 ${
-              isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-10"
-            }`}
-          >
-            <div className="relative aspect-square max-w-md mx-auto">
-              {/* Decorative background */}
-              <div className="absolute inset-4 rounded-3xl bg-gradient-to-br from-primary/20 to-secondary/20 blur-2xl" />
-              <div className="relative rounded-3xl overflow-hidden glass border border-white/10 aspect-square flex items-center justify-center">
-                <div className="text-center p-8">
-                  <div className="w-32 h-32 mx-auto rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center mb-6">
-                    <span className="text-5xl font-bold text-white">UA</span>
-                  </div>
-                  <p className="text-muted text-sm">Uki Aula Fauzi</p>
-                </div>
-              </div>
-              {/* Floating decorations */}
-              <div className="absolute -top-4 -right-4 w-20 h-20 rounded-2xl glass border border-primary/20 flex items-center justify-center animate-float">
-                <span className="text-2xl">💻</span>
-              </div>
-              <div
-                className="absolute -bottom-4 -left-4 w-16 h-16 rounded-2xl glass border border-secondary/20 flex items-center justify-center animate-float"
-                style={{ animationDelay: "1s" }}
-              >
-                <span className="text-xl">⚙️</span>
-              </div>
-            </div>
+        {/* Content */}
+        <div
+          className={`max-w-3xl mx-auto transition-all duration-700 delay-200 ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+          }`}
+        >
+          <h3 className="text-2xl font-semibold mb-4 text-center">
+            Web Developer & IT Specialist
+          </h3>
+          <div className="space-y-4 text-muted leading-relaxed">
+            <p>
+              Sebagai Web Developer dengan latar belakang kuat di Informatika,
+              saya memiliki spesialisasi dalam membangun dan mengelola sistem
+              informasi akademik serta aplikasi berbasis web yang efisien.
+            </p>
+            <p>
+              Saya berpengalaman sebagai staf IT & Programmer di lingkungan
+              perguruan tinggi, bertanggung jawab atas pengembangan ekosistem
+              digital kampus mulai dari Sistem Informasi Akademik (SIAKAD)
+              hingga pengelolaan LMS Moodle. Terbiasa bekerja secara fleksibel
+              menggunakan Laravel, CodeIgniter, dan PHP Native.
+            </p>
+            <p>
+              Sebelum fokus pada pengembangan web, saya menajamkan logika
+              algoritma dan kreativitas melalui pengalaman intensif sebagai
+              Game Programmer (Unity/C#) di Agate Academy dan ICE Institute.
+              Pengalaman ini membentuk kemampuan problem-solving yang adaptif.
+            </p>
           </div>
 
-          {/* Text Side */}
-          <div
-            className={`transition-all duration-700 delay-300 ${
-              isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-10"
-            }`}
-          >
-            <h3 className="text-2xl font-semibold mb-4">
-              Web Developer & IT Specialist
-            </h3>
-            <div className="space-y-4 text-muted leading-relaxed">
-              <p>
-                Sebagai Web Developer dengan latar belakang kuat di Informatika,
-                saya memiliki spesialisasi dalam membangun dan mengelola sistem
-                informasi akademik serta aplikasi berbasis web yang efisien.
-              </p>
-              <p>
-                Saya berpengalaman sebagai staf IT & Programmer di lingkungan
-                perguruan tinggi, bertanggung jawab atas pengembangan ekosistem
-                digital kampus mulai dari Sistem Informasi Akademik (SIAKAD)
-                hingga pengelolaan LMS Moodle. Terbiasa bekerja secara fleksibel
-                menggunakan Laravel, CodeIgniter, dan PHP Native.
-              </p>
-              <p>
-                Sebelum fokus pada pengembangan web, saya menajamkan logika
-                algoritma dan kreativitas melalui pengalaman intensif sebagai
-                Game Programmer (Unity/C#) di Agate Academy dan ICE Institute.
-                Pengalaman ini membentuk kemampuan problem-solving yang adaptif.
-              </p>
-            </div>
-
-            {/* CTA */}
-            <div className="flex gap-4 mt-8">
-              <a href="#contact" className="btn-primary text-sm">
-                Hubungi Saya
-              </a>
-              <a
-                href="#projects"
-                className="btn-secondary text-sm"
-              >
-                Lihat Karya
-              </a>
-            </div>
+          {/* CTA */}
+          <div className="flex justify-center gap-4 mt-8">
+            <a href="#contact" className="btn-primary text-sm">
+              Hubungi Saya
+            </a>
+            <a
+              href="https://www.linkedin.com/in/uki-aula-fauzi/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-secondary text-sm"
+            >
+              LinkedIn Profile
+            </a>
           </div>
         </div>
 

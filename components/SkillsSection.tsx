@@ -8,11 +8,8 @@ const skillCategories = [
     icon: "🎨",
     color: "from-primary to-purple-400",
     skills: [
-      { name: "HTML / CSS", level: 90 },
-      { name: "JavaScript", level: 80 },
-      { name: "Bootstrap", level: 85 },
-      { name: "Tailwind CSS", level: 75 },
-      { name: "React / Next.js", level: 60 },
+      "React", "Angular", "AngularJS", "Vue.js",
+      "Next.js", "Astro", "Bootstrap", "Tailwind CSS",
     ],
   },
   {
@@ -20,23 +17,25 @@ const skillCategories = [
     icon: "⚙️",
     color: "from-secondary to-cyan-400",
     skills: [
-      { name: "PHP Native", level: 90 },
-      { name: "Laravel", level: 85 },
-      { name: "CodeIgniter", level: 85 },
-      { name: "MySQL", level: 85 },
-      { name: "REST API", level: 75 },
+      "PHP Native", "Laravel", "CodeIgniter",
+      "Node.js", "Express.js", "Flask",
     ],
   },
   {
-    title: "Tools & Others",
+    title: "Database",
+    icon: "🗄️",
+    color: "from-amber-500 to-orange-400",
+    skills: [
+      "MySQL", "PostgreSQL", "MongoDB", "SQLite",
+    ],
+  },
+  {
+    title: "DevOps & Tools",
     icon: "🛠️",
     color: "from-accent to-pink-400",
     skills: [
-      { name: "Git / GitHub", level: 80 },
-      { name: "Unity / C#", level: 70 },
-      { name: "Moodle LMS", level: 80 },
-      { name: "VS Code", level: 90 },
-      { name: "Linux Server", level: 70 },
+      "Git", "GitHub", "Docker", "REST API",
+      "Nginx", "Apache HTTP Server", "Webpack", "Vite",
     ],
   },
 ]
@@ -73,18 +72,18 @@ export default function SkillsSection() {
           }`}
         >
           <span className="text-primary text-sm font-mono tracking-widest uppercase">
-            My Skills
+            Tech Stack
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mt-3">
-            Teknologi yang Saya <span className="gradient-text">Kuasai</span>
+            Teknologi yang <span className="gradient-text">Digunakan</span>
           </h2>
           <p className="text-muted mt-4 max-w-xl mx-auto">
-            Terus belajar dan mengembangkan kemampuan di berbagai stack teknologi
+            Berbagai teknologi yang pernah dan sering saya gunakan dalam pengembangan project
           </p>
         </div>
 
         {/* Skills Grid */}
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {skillCategories.map((category, catIndex) => (
             <div
               key={category.title}
@@ -96,39 +95,29 @@ export default function SkillsSection() {
               style={{ transitionDelay: `${200 + catIndex * 150}ms` }}
             >
               {/* Category Header */}
-              <div className="flex items-center gap-3 mb-6">
+              <div className="flex items-center gap-3 mb-5">
                 <div
-                  className={`w-12 h-12 rounded-xl bg-gradient-to-br ${category.color} flex items-center justify-center text-xl`}
+                  className={`w-11 h-11 rounded-xl bg-gradient-to-br ${category.color} flex items-center justify-center text-lg`}
                 >
                   {category.icon}
                 </div>
                 <h3 className="text-lg font-semibold">{category.title}</h3>
               </div>
 
-              {/* Skill Items */}
-              <div className="space-y-4">
+              {/* Skill Tags */}
+              <div className="flex flex-wrap gap-2">
                 {category.skills.map((skill, skillIndex) => (
-                  <div key={skill.name}>
-                    <div className="flex items-center justify-between mb-1.5">
-                      <span className="text-sm text-foreground/80">
-                        {skill.name}
-                      </span>
-                      <span className="text-xs text-muted font-mono">
-                        {skill.level}%
-                      </span>
-                    </div>
-                    <div className="skill-bar">
-                      <div
-                        className="skill-bar-fill"
-                        style={{
-                          width: isVisible ? `${skill.level}%` : "0%",
-                          transitionDelay: `${
-                            400 + catIndex * 150 + skillIndex * 80
-                          }ms`,
-                        }}
-                      />
-                    </div>
-                  </div>
+                  <span
+                    key={skill}
+                    className={`px-3 py-1.5 text-sm rounded-lg bg-white/5 text-foreground/80 border border-white/8 hover:border-primary/30 hover:bg-white/8 transition-all duration-300 cursor-default ${
+                      isVisible ? "opacity-100 scale-100" : "opacity-0 scale-95"
+                    }`}
+                    style={{
+                      transitionDelay: `${400 + catIndex * 150 + skillIndex * 50}ms`,
+                    }}
+                  >
+                    {skill}
+                  </span>
                 ))}
               </div>
             </div>
