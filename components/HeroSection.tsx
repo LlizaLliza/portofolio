@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import { useLanguage } from "@/contexts/LanguageContext"
 
 const roles = [
   "Web Developer",
@@ -13,6 +14,7 @@ export default function HeroSection() {
   const [roleIndex, setRoleIndex] = useState(0)
   const [displayText, setDisplayText] = useState("")
   const [isDeleting, setIsDeleting] = useState(false)
+  const { t } = useLanguage()
 
   useEffect(() => {
     const currentRole = roles[roleIndex]
@@ -72,19 +74,19 @@ export default function HeroSection() {
         {/* Badge */}
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border border-white/10 mb-8 animate-fade-in-up">
           <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-          <span className="text-sm text-muted">Open to Opportunities</span>
+          <span className="text-sm text-muted">{t("hero.badge")}</span>
         </div>
 
         {/* Name */}
         <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-6 animate-fade-in-up delay-100">
-          Hi, I&apos;m{" "}
+          {t("hero.greeting")}{" "}
           <span className="gradient-text">Uki Aula Fauzi</span>
         </h1>
 
         {/* Typing Role */}
         <div className="h-12 flex items-center justify-center mb-8 animate-fade-in-up delay-200">
           <span className="text-xl sm:text-2xl md:text-3xl text-muted font-light">
-            I&apos;m a{" "}
+            {t("hero.iAmA")}{" "}
             <span className="text-white font-medium">
               {displayText}
               <span className="animate-blink text-primary">|</span>
@@ -94,8 +96,7 @@ export default function HeroSection() {
 
         {/* Description */}
         <p className="text-muted text-lg md:text-xl max-w-2xl mx-auto mb-12 animate-fade-in-up delay-300 leading-relaxed">
-          Membangun sistem informasi akademik & aplikasi web yang efisien
-          dengan PHP, Laravel, CodeIgniter, dan teknologi modern lainnya.
+          {t("hero.description")}
         </p>
 
         {/* CTA Buttons */}
@@ -106,21 +107,21 @@ export default function HeroSection() {
               <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/>
               <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/>
             </svg>
-            Lihat Project
+            {t("hero.viewProjects")}
           </a>
           <a href="#contact" className="btn-secondary text-base">
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <rect width="20" height="16" x="2" y="4" rx="2"/>
               <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
             </svg>
-            Hubungi Saya
+            {t("hero.contactMe")}
           </a>
         </div>
       </div>
 
       {/* Scroll Indicator */}
       <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-fade-in-up delay-700">
-        <span className="text-xs text-muted/50 uppercase tracking-widest">Scroll</span>
+        <span className="text-xs text-muted/50 uppercase tracking-widest">{t("hero.scroll")}</span>
         <div className="w-6 h-10 rounded-full border-2 border-white/10 flex items-start justify-center p-1.5">
           <div className="w-1.5 h-1.5 rounded-full bg-primary animate-scroll-indicator" />
         </div>

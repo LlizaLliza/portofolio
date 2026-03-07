@@ -1,10 +1,11 @@
 "use client"
 
 import { useEffect, useRef, useState } from "react"
+import { useLanguage } from "@/contexts/LanguageContext"
 
 const skillCategories = [
   {
-    title: "Bahasa Pemrograman",
+    titleKey: "skills.catLanguages",
     icon: "💻",
     color: "from-emerald-500 to-teal-400",
     skills: [
@@ -13,7 +14,7 @@ const skillCategories = [
     ],
   },
   {
-    title: "Frontend",
+    titleKey: "skills.catFrontend",
     icon: "🎨",
     color: "from-primary to-purple-400",
     skills: [
@@ -22,7 +23,7 @@ const skillCategories = [
     ],
   },
   {
-    title: "Backend",
+    titleKey: "skills.catBackend",
     icon: "⚙️",
     color: "from-secondary to-cyan-400",
     skills: [
@@ -31,7 +32,7 @@ const skillCategories = [
     ],
   },
   {
-    title: "Database",
+    titleKey: "skills.catDatabase",
     icon: "🗄️",
     color: "from-amber-500 to-orange-400",
     skills: [
@@ -39,7 +40,7 @@ const skillCategories = [
     ],
   },
   {
-    title: "DevOps & Tools",
+    titleKey: "skills.catDevops",
     icon: "🛠️",
     color: "from-accent to-pink-400",
     skills: [
@@ -49,7 +50,7 @@ const skillCategories = [
     ],
   },
   {
-    title: "Game Development",
+    titleKey: "skills.catGameDev",
     icon: "🎮",
     color: "from-rose-500 to-red-400",
     skills: [
@@ -61,6 +62,7 @@ const skillCategories = [
 export default function SkillsSection() {
   const [isVisible, setIsVisible] = useState(false)
   const sectionRef = useRef<HTMLElement>(null)
+  const { t } = useLanguage()
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -90,13 +92,13 @@ export default function SkillsSection() {
           }`}
         >
           <span className="text-primary text-sm font-mono tracking-widest uppercase">
-            Tech Stack
+            {t("skills.label")}
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mt-3">
-            Teknologi yang <span className="gradient-text">Digunakan</span>
+            {t("skills.title")} <span className="gradient-text">{t("skills.titleHighlight")}</span>
           </h2>
           <p className="text-muted mt-4 max-w-xl mx-auto">
-            Berbagai teknologi yang pernah dan sering saya gunakan dalam pengembangan project
+            {t("skills.subtitle")}
           </p>
         </div>
 
@@ -104,7 +106,7 @@ export default function SkillsSection() {
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {skillCategories.map((category, catIndex) => (
             <div
-              key={category.title}
+              key={category.titleKey}
               className={`glass glass-hover rounded-2xl p-6 transition-all duration-700 ${
                 isVisible
                   ? "opacity-100 translate-y-0"
@@ -119,7 +121,7 @@ export default function SkillsSection() {
                 >
                   {category.icon}
                 </div>
-                <h3 className="text-lg font-semibold">{category.title}</h3>
+                <h3 className="text-lg font-semibold">{t(category.titleKey)}</h3>
               </div>
 
               {/* Skill Tags */}

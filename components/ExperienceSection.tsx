@@ -1,6 +1,7 @@
 "use client"
 
 import { useEffect, useRef, useState } from "react"
+import { useLanguage } from "@/contexts/LanguageContext"
 
 const experiences = [
   {
@@ -75,6 +76,7 @@ const experiences = [
 export default function ExperienceSection() {
   const [isVisible, setIsVisible] = useState(false)
   const sectionRef = useRef<HTMLElement>(null)
+  const { t } = useLanguage()
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -104,13 +106,13 @@ export default function ExperienceSection() {
           }`}
         >
           <span className="text-primary text-sm font-mono tracking-widest uppercase">
-            Experience
+            {t("experience.label")}
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mt-3">
-            Pengalaman <span className="gradient-text">Kerja</span>
+            {t("experience.title")} <span className="gradient-text">{t("experience.titleHighlight")}</span>
           </h2>
           <p className="text-muted mt-4 max-w-xl mx-auto">
-            Perjalanan profesional saya di bidang IT, pengembangan web, dan game development
+            {t("experience.subtitle")}
           </p>
         </div>
 

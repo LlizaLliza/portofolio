@@ -1,20 +1,23 @@
 "use client"
 
 import { useState, useEffect } from "react"
-
-const navLinks = [
-  { label: "Home", href: "/#home" },
-  { label: "About", href: "/#about" },
-  { label: "Skills", href: "/#skills" },
-  { label: "Experience", href: "/#experience" },
-  { label: "Projects", href: "/#projects" },
-  { label: "Contact", href: "/#contact" },
-]
+import { useLanguage } from "@/contexts/LanguageContext"
+import LanguageToggle from "@/components/LanguageToggle"
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileOpen, setIsMobileOpen] = useState(false)
   const [activeSection, setActiveSection] = useState("home")
+  const { t } = useLanguage()
+
+  const navLinks = [
+    { label: t("nav.home"), href: "/#home" },
+    { label: t("nav.about"), href: "/#about" },
+    { label: t("nav.skills"), href: "/#skills" },
+    { label: t("nav.experience"), href: "/#experience" },
+    { label: t("nav.projects"), href: "/#projects" },
+    { label: t("nav.contact"), href: "/#contact" },
+  ]
 
   useEffect(() => {
     const handleScroll = () => {
@@ -72,7 +75,7 @@ export default function Navbar() {
             const isActive = activeSection === sectionId
             return (
               <a
-                key={link.label}
+                key={link.href}
                 href={link.href}
                 className={`relative px-4 py-2 text-sm font-medium rounded-full transition-all duration-300 ${
                   isActive
@@ -89,13 +92,16 @@ export default function Navbar() {
           })}
         </div>
 
-        {/* CTA Button (Desktop) */}
-        <a
-          href="/#contact"
-          className="hidden md:inline-flex btn-primary text-sm py-2.5 px-6"
-        >
-          Hire Me
-        </a>
+        {/* Language Toggle + CTA Button (Desktop) */}
+        <div className="hidden md:flex items-center gap-3">
+          <LanguageToggle />
+          <a
+            href="/#contact"
+            className="btn-primary text-sm py-2.5 px-6"
+          >
+            {t("nav.hireMe")}
+          </a>
+        </div>
 
         {/* Mobile Hamburger */}
         <button
@@ -132,7 +138,7 @@ export default function Navbar() {
               const isActive = activeSection === sectionId
               return (
                 <a
-                  key={link.label}
+                  key={link.href}
                   href={link.href}
                   onClick={() => setIsMobileOpen(false)}
                   className={`px-4 py-3 rounded-xl text-sm font-medium transition-all ${
@@ -145,13 +151,16 @@ export default function Navbar() {
                 </a>
               )
             })}
-            <a
-              href="/#contact"
-              onClick={() => setIsMobileOpen(false)}
-              className="btn-primary text-sm text-center mt-2 justify-center"
-            >
-              Hire Me
-            </a>
+            <div className="flex items-center justify-between mt-2 gap-3">
+              <LanguageToggle />
+              <a
+                href="/#contact"
+                onClick={() => setIsMobileOpen(false)}
+                className="btn-primary text-sm text-center flex-1 justify-center"
+              >
+                {t("nav.hireMe")}
+              </a>
+            </div>
           </div>
         </div>
       )}

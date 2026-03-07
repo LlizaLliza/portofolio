@@ -1,6 +1,7 @@
 "use client"
 
 import { useEffect, useRef, useState } from "react"
+import { useLanguage } from "@/contexts/LanguageContext"
 
 const contactInfo = [
   {
@@ -42,6 +43,7 @@ const contactInfo = [
 export default function ContactSection() {
   const [isVisible, setIsVisible] = useState(false)
   const sectionRef = useRef<HTMLElement>(null)
+  const { t } = useLanguage()
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -71,13 +73,13 @@ export default function ContactSection() {
           }`}
         >
           <span className="text-primary text-sm font-mono tracking-widest uppercase">
-            Get in Touch
+            {t("contact.label")}
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mt-3">
-            Mari <span className="gradient-text">Terhubung</span>
+            {t("contact.title")} <span className="gradient-text">{t("contact.titleHighlight")}</span>
           </h2>
           <p className="text-muted mt-4 max-w-xl mx-auto">
-            Punya project atau ingin berkolaborasi? Jangan ragu untuk menghubungi saya!
+            {t("contact.subtitle")}
           </p>
         </div>
 
@@ -118,8 +120,7 @@ export default function ContactSection() {
             {/* Extra message */}
             <div className="glass rounded-2xl p-6 text-center">
               <p className="text-muted text-sm leading-relaxed">
-                Saya selalu terbuka untuk diskusi mengenai project baru,
-                ide kreatif, atau kesempatan kolaborasi.
+                {t("contact.extraMessage")}
               </p>
             </div>
           </div>
@@ -140,12 +141,12 @@ export default function ContactSection() {
                     htmlFor="name"
                     className="block text-sm text-muted mb-2"
                   >
-                    Name
+                    {t("contact.formName")}
                   </label>
                   <input
                     type="text"
                     id="name"
-                    placeholder="Your name"
+                    placeholder={t("contact.formNamePlaceholder")}
                     className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-foreground placeholder:text-muted/50 focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/25 transition-all text-sm"
                   />
                 </div>
@@ -154,12 +155,12 @@ export default function ContactSection() {
                     htmlFor="email"
                     className="block text-sm text-muted mb-2"
                   >
-                    Email
+                    {t("contact.formEmail")}
                   </label>
                   <input
                     type="email"
                     id="email"
-                    placeholder="your@email.com"
+                    placeholder={t("contact.formEmailPlaceholder")}
                     className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-foreground placeholder:text-muted/50 focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/25 transition-all text-sm"
                   />
                 </div>
@@ -170,12 +171,12 @@ export default function ContactSection() {
                   htmlFor="subject"
                   className="block text-sm text-muted mb-2"
                 >
-                  Subject
+                  {t("contact.formSubject")}
                 </label>
                 <input
                   type="text"
                   id="subject"
-                  placeholder="Project inquiry"
+                  placeholder={t("contact.formSubjectPlaceholder")}
                   className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-foreground placeholder:text-muted/50 focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/25 transition-all text-sm"
                 />
               </div>
@@ -185,12 +186,12 @@ export default function ContactSection() {
                   htmlFor="message"
                   className="block text-sm text-muted mb-2"
                 >
-                  Message
+                  {t("contact.formMessage")}
                 </label>
                 <textarea
                   id="message"
                   rows={5}
-                  placeholder="Tell me about your project..."
+                  placeholder={t("contact.formMessagePlaceholder")}
                   className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-foreground placeholder:text-muted/50 focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/25 transition-all text-sm resize-none"
                 />
               </div>
@@ -200,7 +201,7 @@ export default function ContactSection() {
                   <path d="m22 2-7 20-4-9-9-4Z"/>
                   <path d="M22 2 11 13"/>
                 </svg>
-                Kirim Pesan
+                {t("contact.formSubmit")}
               </button>
             </form>
           </div>

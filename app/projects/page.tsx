@@ -1,6 +1,7 @@
 "use client"
 
 import { useEffect, useRef, useState } from "react"
+import { useLanguage } from "@/contexts/LanguageContext"
 
 const allProjects = [
   {
@@ -77,6 +78,7 @@ export default function ProjectsPage() {
   const [activeCategory, setActiveCategory] = useState("All")
   const [isVisible, setIsVisible] = useState(false)
   const pageRef = useRef<HTMLDivElement>(null)
+  const { t } = useLanguage()
 
   useEffect(() => {
     setIsVisible(true)
@@ -104,13 +106,13 @@ export default function ProjectsPage() {
               <path d="m12 19-7-7 7-7"/>
               <path d="M19 12H5"/>
             </svg>
-            Kembali ke Home
+            {t("projectsPage.back")}
           </a>
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold">
-            Semua <span className="gradient-text">Project</span>
+            {t("projectsPage.title")} <span className="gradient-text">{t("projectsPage.titleHighlight")}</span>
           </h1>
           <p className="text-muted mt-4 text-lg max-w-2xl">
-            Koleksi lengkap karya saya di bidang frontend, full-stack, dan game development.
+            {t("projectsPage.subtitle")}
           </p>
         </div>
 
@@ -130,7 +132,7 @@ export default function ProjectsPage() {
                   : "glass text-muted hover:text-white hover:bg-white/5"
               }`}
             >
-              {cat}
+              {cat === "All" ? t("projectsPage.filterAll") : cat}
             </button>
           ))}
         </div>

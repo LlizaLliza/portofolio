@@ -1,7 +1,10 @@
 "use client"
 
+import { useLanguage } from "@/contexts/LanguageContext"
+
 export default function Footer() {
   const currentYear = new Date().getFullYear()
+  const { t } = useLanguage()
 
   const socialLinks = [
     {
@@ -48,7 +51,7 @@ export default function Footer() {
               <span className="text-white/40">.</span>
             </a>
             <p className="text-muted text-sm mt-2">
-              Web Developer & IT Specialist.
+              {t("footer.tagline")}
             </p>
           </div>
 
@@ -75,7 +78,7 @@ export default function Footer() {
         {/* Copyright */}
         <div className="text-center">
           <p className="text-muted/60 text-sm">
-            © {currentYear} Portfolio. All rights reserved. Built with{" "}
+            © {currentYear} {t("footer.copyright")}{" "}
             <span className="gradient-text font-medium">Next.js</span> &{" "}
             <span className="gradient-text font-medium">Tailwind CSS</span>
           </p>
