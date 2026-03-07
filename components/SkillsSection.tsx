@@ -4,12 +4,21 @@ import { useEffect, useRef, useState } from "react"
 
 const skillCategories = [
   {
+    title: "Bahasa Pemrograman",
+    icon: "💻",
+    color: "from-emerald-500 to-teal-400",
+    skills: [
+      "PHP", "JavaScript", "TypeScript", "Python",
+      "C#", "HTML", "CSS", "SQL",
+    ],
+  },
+  {
     title: "Frontend",
     icon: "🎨",
     color: "from-primary to-purple-400",
     skills: [
       "React", "Angular", "AngularJS", "Vue.js",
-      "Next.js", "Astro", "Bootstrap", "Tailwind CSS",
+      "Next.js", "Astro", "Bootstrap", "Tailwind CSS", "PWA",
     ],
   },
   {
@@ -26,7 +35,7 @@ const skillCategories = [
     icon: "🗄️",
     color: "from-amber-500 to-orange-400",
     skills: [
-      "MySQL", "PostgreSQL", "MongoDB", "SQLite",
+      "MySQL", "PostgreSQL", "MongoDB", "SQLite", "IndexedDB",
     ],
   },
   {
@@ -34,8 +43,17 @@ const skillCategories = [
     icon: "🛠️",
     color: "from-accent to-pink-400",
     skills: [
-      "Git", "GitHub", "Docker", "REST API",
+      "Git", "GitHub", "Docker", "REST API", "JSON",
       "Nginx", "Apache HTTP Server", "Webpack", "Vite",
+      "Google API", "Google OAuth", "Workbox", "Push API", "MapTiler",
+    ],
+  },
+  {
+    title: "Game Development",
+    icon: "🎮",
+    color: "from-rose-500 to-red-400",
+    skills: [
+      "Unity", "Agile/Scrum", "GDLC",
     ],
   },
 ]

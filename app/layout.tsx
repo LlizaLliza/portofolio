@@ -15,9 +15,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Uki Aula Fauzi — PHP Web Developer & IT Specialist",
+  title: "Uki Aula Fauzi — Web Developer & IT Specialist",
   description:
-    "Portfolio Uki Aula Fauzi — PHP Web Developer (Laravel, CodeIgniter, Native), IT Support Specialist, dan Game Developer. Berpengalaman membangun sistem informasi akademik dan aplikasi web.",
+    "Portfolio Uki Aula Fauzi — Web Developer (Laravel, CodeIgniter, Native), IT Support Specialist, dan Game Developer. Berpengalaman membangun sistem informasi akademik dan aplikasi web.",
   keywords: ["portfolio", "php developer", "laravel", "codeigniter", "web developer", "game developer", "IT support"],
 };
 

@@ -59,14 +59,14 @@ const experiences = [
   {
     role: "Studi Independen Game Dev",
     company: "Agate Academy",
-    type: "Kampus Merdeka",
+    type: "Contract",
     period: "Agt 2021 - Jan 2022",
     location: "Remote",
     color: "from-emerald-500 to-teal-400",
     highlights: [
       "Terpilih sebagai peserta Studi Independen Kampus Merdeka di studio game terbesar Indonesia.",
       "Mengembangkan game prototype 2D menggunakan Unity Engine dan C#.",
-      "Berkolaborasi dalam tim menggunakan metodologi Agile/Scrum dan Git/GitHub.",
+      "Berkolaborasi dalam tim menggunakan metodologi GDLC dan Git/GitHub.",
       "Mengimplementasikan gameplay mechanics, fisika, dan user interface (UI).",
     ],
   },
