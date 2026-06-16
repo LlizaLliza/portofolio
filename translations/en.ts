@@ -75,6 +75,9 @@ const en = {
     formMessage: "Message",
     formMessagePlaceholder: "Tell me about your project...",
     formSubmit: "Send Message",
+    formSending: "Sending...",
+    formSuccess: "Message sent successfully! Thank you, I'll get back to you soon.",
+    formError: "Failed to send message. Please try again or contact me directly via email.",
   },
   footer: {
     tagline: "Web Developer & IT Specialist.",

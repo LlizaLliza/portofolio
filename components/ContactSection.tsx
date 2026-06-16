@@ -1,7 +1,11 @@
 "use client"
 
-import { useEffect, useRef, useState } from "react"
+import { useEffect, useRef, useState, FormEvent } from "react"
 import { useLanguage } from "@/contexts/LanguageContext"
+
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/xwvjzqqw"
+
+type FormStatus = "idle" | "submitting" | "success" | "error"
 
 const contactInfo = [
   {
@@ -42,7 +46,9 @@ const contactInfo = [
 
 export default function ContactSection() {
   const [isVisible, setIsVisible] = useState(false)
+  const [formStatus, setFormStatus] = useState<FormStatus>("idle")
   const sectionRef = useRef<HTMLElement>(null)
+  const formRef = useRef<HTMLFormElement>(null)
   const { t } = useLanguage()
 
   useEffect(() => {
@@ -55,6 +61,38 @@ export default function ContactSection() {
     if (sectionRef.current) observer.observe(sectionRef.current)
     return () => observer.disconnect()
   }, [])
+
+  // Auto-reset status setelah 5 detik
+  useEffect(() => {
+    if (formStatus === "success" || formStatus === "error") {
+      const timer = setTimeout(() => setFormStatus("idle"), 5000)
+      return () => clearTimeout(timer)
+    }
+  }, [formStatus])
+
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    setFormStatus("submitting")
+
+    const formData = new FormData(e.currentTarget)
+
+    try {
+      const response = await fetch(FORMSPREE_ENDPOINT, {
+        method: "POST",
+        body: formData,
+        headers: { Accept: "application/json" },
+      })
+
+      if (response.ok) {
+        setFormStatus("success")
+        formRef.current?.reset()
+      } else {
+        setFormStatus("error")
+      }
+    } catch {
+      setFormStatus("error")
+    }
+  }
 
   return (
     <section
@@ -132,7 +170,8 @@ export default function ContactSection() {
             }`}
           >
             <form
-              onSubmit={(e) => e.preventDefault()}
+              ref={formRef}
+              onSubmit={handleSubmit}
               className="glass rounded-2xl p-8"
             >
               <div className="grid sm:grid-cols-2 gap-4 mb-4">
@@ -146,8 +185,11 @@ export default function ContactSection() {
                   <input
                     type="text"
                     id="name"
+                    name="name"
+                    required
+                    disabled={formStatus === "submitting"}
                     placeholder={t("contact.formNamePlaceholder")}
-                    className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-foreground placeholder:text-muted/50 focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/25 transition-all text-sm"
+                    className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-foreground placeholder:text-muted/50 focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/25 transition-all text-sm disabled:opacity-50 disabled:cursor-not-allowed"
                   />
                 </div>
                 <div>
@@ -160,8 +202,11 @@ export default function ContactSection() {
                   <input
                     type="email"
                     id="email"
+                    name="email"
+                    required
+                    disabled={formStatus === "submitting"}
                     placeholder={t("contact.formEmailPlaceholder")}
-                    className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-foreground placeholder:text-muted/50 focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/25 transition-all text-sm"
+                    className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-foreground placeholder:text-muted/50 focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/25 transition-all text-sm disabled:opacity-50 disabled:cursor-not-allowed"
                   />
                 </div>
               </div>
@@ -176,8 +221,11 @@ export default function ContactSection() {
                 <input
                   type="text"
                   id="subject"
+                  name="subject"
+                  required
+                  disabled={formStatus === "submitting"}
                   placeholder={t("contact.formSubjectPlaceholder")}
-                  className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-foreground placeholder:text-muted/50 focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/25 transition-all text-sm"
+                  className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-foreground placeholder:text-muted/50 focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/25 transition-all text-sm disabled:opacity-50 disabled:cursor-not-allowed"
                 />
               </div>
 
@@ -190,18 +238,58 @@ export default function ContactSection() {
                 </label>
                 <textarea
                   id="message"
+                  name="message"
                   rows={5}
+                  required
+                  disabled={formStatus === "submitting"}
                   placeholder={t("contact.formMessagePlaceholder")}
-                  className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-foreground placeholder:text-muted/50 focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/25 transition-all text-sm resize-none"
+                  className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-foreground placeholder:text-muted/50 focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/25 transition-all text-sm resize-none disabled:opacity-50 disabled:cursor-not-allowed"
                 />
               </div>
 
-              <button type="submit" className="btn-primary w-full justify-center text-base">
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="m22 2-7 20-4-9-9-4Z"/>
-                  <path d="M22 2 11 13"/>
-                </svg>
-                {t("contact.formSubmit")}
+              {/* Status Messages */}
+              {formStatus === "success" && (
+                <div className="mb-4 px-4 py-3 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-sm flex items-center gap-2 animate-fade-in-up">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                    <polyline points="22 4 12 14.01 9 11.01"/>
+                  </svg>
+                  {t("contact.formSuccess")}
+                </div>
+              )}
+
+              {formStatus === "error" && (
+                <div className="mb-4 px-4 py-3 rounded-xl bg-red-500/10 border border-red-500/20 text-red-400 text-sm flex items-center gap-2 animate-fade-in-up">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <circle cx="12" cy="12" r="10"/>
+                    <line x1="15" y1="9" x2="9" y2="15"/>
+                    <line x1="9" y1="9" x2="15" y2="15"/>
+                  </svg>
+                  {t("contact.formError")}
+                </div>
+              )}
+
+              <button
+                type="submit"
+                disabled={formStatus === "submitting"}
+                className="btn-primary w-full justify-center text-base disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:transform-none disabled:hover:shadow-none"
+              >
+                {formStatus === "submitting" ? (
+                  <>
+                    <svg className="animate-spin" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M21 12a9 9 0 1 1-6.219-8.56"/>
+                    </svg>
+                    {t("contact.formSending")}
+                  </>
+                ) : (
+                  <>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="m22 2-7 20-4-9-9-4Z"/>
+                      <path d="M22 2 11 13"/>
+                    </svg>
+                    {t("contact.formSubmit")}
+                  </>
+                )}
               </button>
             </form>
           </div>
@@ -210,3 +298,4 @@ export default function ContactSection() {
     </section>
   )
 }
+
