@@ -1,6 +1,7 @@
 "use client"
 
 import { useEffect, useRef, useState } from "react"
+import Image from "next/image"
 import { useLanguage } from "@/contexts/LanguageContext"
 import { projects as allProjects, categories } from "@/data/projects"
 
@@ -82,13 +83,15 @@ export default function ProjectsPage() {
               <div className="flex flex-col sm:flex-row">
                 {/* Thumbnail */}
                 <div
-                  className={`sm:w-48 sm:min-h-full h-40 bg-gradient-to-br ${project.gradient} flex items-center justify-center shrink-0 overflow-hidden`}
+                  className={`relative sm:w-48 sm:min-h-full h-40 bg-gradient-to-br ${project.gradient} flex items-center justify-center shrink-0 overflow-hidden`}
                 >
                   {project.image ? (
-                    <img
+                    <Image
                       src={project.image}
                       alt={project.title}
-                      className="w-full h-full object-cover object-top"
+                      fill
+                      sizes="(max-width: 640px) 100vw, 192px"
+                      className="object-cover object-top"
                     />
                   ) : (
                     <div className="w-14 h-14 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center">

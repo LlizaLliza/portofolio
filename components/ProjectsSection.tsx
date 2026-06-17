@@ -1,6 +1,7 @@
 "use client"
 
 import { useEffect, useRef, useState } from "react"
+import Image from "next/image"
 import { useLanguage } from "@/contexts/LanguageContext"
 import { projects } from "@/data/projects"
 
@@ -61,10 +62,12 @@ export default function ProjectsSection() {
                 className={`relative h-48 bg-gradient-to-br ${project.gradient} flex items-center justify-center overflow-hidden`}
               >
                 {project.image ? (
-                  <img
+                  <Image
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-full object-cover object-top"
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    className="object-cover object-top"
                   />
                 ) : (
                   <>
