@@ -115,7 +115,7 @@ export default function ProjectsPage() {
                     </span>
                   </div>
                   <p className="text-muted text-sm leading-relaxed mb-4">
-                    {project.description}
+                    {t(project.descriptionKey)}
                   </p>
 
                   <div className="flex items-end justify-between gap-4">

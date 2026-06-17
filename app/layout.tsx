@@ -20,6 +20,28 @@ export const metadata: Metadata = {
   description:
     "Portfolio Uki Aula Fauzi — Web Developer (Laravel, CodeIgniter, Native), IT Support Specialist, dan Game Developer. Berpengalaman membangun sistem informasi akademik dan aplikasi web.",
   keywords: ["portfolio", "php developer", "laravel", "codeigniter", "web developer", "game developer", "IT support"],
+  openGraph: {
+    title: "Uki Aula Fauzi — Web Developer & IT Specialist",
+    description: "Portfolio Uki Aula Fauzi — Web Developer, IT Support Specialist, dan Game Developer.",
+    url: "https://llizafauzi.vercel.app/",
+    siteName: "Uki Aula Fauzi Portfolio",
+    images: [
+      {
+        url: "https://llizafauzi.vercel.app/portofolio.PNG",
+        width: 1200,
+        height: 630,
+        alt: "Uki Aula Fauzi Portfolio Thumbnail",
+      },
+    ],
+    locale: "id_ID",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Uki Aula Fauzi — Web Developer & IT Specialist",
+    description: "Portfolio Uki Aula Fauzi — Web Developer, IT Support Specialist, dan Game Developer.",
+    images: ["https://llizafauzi.vercel.app/portofolio.PNG"],
+  },
 };
 
 export default function RootLayout({

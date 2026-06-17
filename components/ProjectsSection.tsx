@@ -134,7 +134,7 @@ export default function ProjectsSection() {
                   {project.title}
                 </h3>
                 <p className="text-muted text-sm leading-relaxed mb-4">
-                  {project.description}
+                  {t(project.descriptionKey)}
                 </p>
 
                 {/* Tags */}

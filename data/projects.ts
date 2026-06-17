@@ -1,6 +1,8 @@
+import { TranslationKey } from "@/contexts/LanguageContext"
+
 export interface Project {
   title: string
-  description: string
+  descriptionKey: TranslationKey
   tags: string[]
   gradient: string
   image: string
@@ -12,8 +14,7 @@ export interface Project {
 export const projects: Project[] = [
   {
     title: "Web LPMA Smaratungga",
-    description:
-      "Website Lembaga Penjaminan Mutu & Akreditasi dengan fitur import data Google Form via API, upload file otomatis ke Google Drive, serta REST API untuk integrasi data dari web lain.",
+    descriptionKey: "projectData.lpma.description",
     tags: ["PHP Native", "MySQL", "Google API", "REST API", "Bootstrap"],
     gradient: "from-violet-600 to-indigo-600",
     image: "/lpma.PNG",
@@ -23,8 +24,7 @@ export const projects: Project[] = [
   },
   {
     title: "Career Center Smaratungga",
-    description:
-      "Platform Career Center & konseling online untuk mahasiswa dengan fitur login Google Account, manajemen konseling, informasi karir, serta REST API untuk pengambilan data dari web lain.",
+    descriptionKey: "projectData.cc.description",
     tags: ["Tailwind CSS", "Laravel", "MySQL", "Google OAuth", "REST API"],
     gradient: "from-cyan-600 to-blue-600",
     image: "/cc.PNG",
@@ -34,8 +34,7 @@ export const projects: Project[] = [
   },
   {
     title: "Game 2D Platformer - Alchemist Nightmare",
-    description:
-      "Game 2D platformer yang dikembangkan sebagai proyek skripsi menggunakan Unity dan C# dengan menerapkan metodologi Agile/Scrum.",
+    descriptionKey: "projectData.game2d.description",
     tags: ["Unity", "C#", "Git", "Agile"],
     gradient: "from-orange-500 to-rose-600",
     image: "/game2d.png",
@@ -45,8 +44,7 @@ export const projects: Project[] = [
   },
   {
     title: "StoryShare App",
-    description:
-      "Aplikasi berbagi cerita (PWA) dari bootcamp Dicoding Front-End Web Intermediate dengan fitur offline-first, push notification, peta lokasi, dan penyimpanan cerita favorit via IndexedDB.",
+    descriptionKey: "projectData.storyshare.description",
     tags: ["Webpack", "JavaScript", "PWA", "Workbox", "IndexedDB", "Push API", "MapTiler"],
     gradient: "from-pink-500 to-purple-600",
     image: "/storyshare.PNG",
@@ -56,8 +54,7 @@ export const projects: Project[] = [
   },
   {
     title: "Portfolio Website",
-    description:
-      "Website portfolio personal dengan animasi halus, dark theme glassmorphism, dan desain responsif modern yang dibangun dengan Next.js.",
+    descriptionKey: "projectData.portfolio.description",
     tags: ["Next.js", "TypeScript", "Tailwind", "React"],
     gradient: "from-emerald-500 to-teal-600",
     image: "/portofolio.PNG",
@@ -67,8 +64,7 @@ export const projects: Project[] = [
   },
   {
     title: "Sistem PMB Smaratungga",
-    description:
-      "Sistem Penerimaan Mahasiswa Baru (PMB) online dengan fitur pendaftaran, upload berkas, konfigurasi gelombang, manajemen calon mahasiswa, serta ujian online yang dapat diawasi secara realtime.",
+    descriptionKey: "projectData.pmb.description",
     tags: ["PHP Native", "MySQL", "Bootstrap", "JavaScript"],
     gradient: "from-amber-500 to-orange-600",
     image: "/pmb.PNG",

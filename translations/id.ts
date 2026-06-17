@@ -90,6 +90,80 @@ const id = {
     subtitle: "Koleksi lengkap karya saya di bidang frontend, full-stack, dan game development.",
     filterAll: "All",
   },
+  projectData: {
+    lpma: {
+      description: "Website Lembaga Penjaminan Mutu & Akreditasi dengan fitur import data Google Form via API, upload file otomatis ke Google Drive, serta REST API untuk integrasi data dari web lain.",
+    },
+    cc: {
+      description: "Platform Career Center & konseling online untuk mahasiswa dengan fitur login Google Account, manajemen konseling, informasi karir, serta REST API untuk pengambilan data dari web lain.",
+    },
+    game2d: {
+      description: "Game 2D platformer yang dikembangkan sebagai proyek skripsi menggunakan Unity dan C# dengan menerapkan metodologi Agile/Scrum.",
+    },
+    storyshare: {
+      description: "Aplikasi berbagi cerita (PWA) dari bootcamp Dicoding Front-End Web Intermediate dengan fitur offline-first, push notification, peta lokasi, dan penyimpanan cerita favorit via IndexedDB.",
+    },
+    portfolio: {
+      description: "Website portfolio personal dengan animasi halus, dark theme glassmorphism, dan desain responsif modern yang dibangun dengan Next.js.",
+    },
+    pmb: {
+      description: "Sistem Penerimaan Mahasiswa Baru (PMB) online dengan fitur pendaftaran, upload berkas, konfigurasi gelombang, manajemen calon mahasiswa, serta ujian online yang dapat diawasi secara realtime.",
+    },
+  },
+  experienceData: {
+    programmer: {
+      role: "Programmer",
+      company: "STIAB Smaratungga",
+      type: "Kontrak",
+      period: "Agt 2024 - Saat ini",
+      location: "Boyolali, Jawa Tengah · Hybrid",
+      h0: "Merancang, mengembangkan, dan memelihara Sistem Informasi Akademik (SIAKAD) menggunakan Laravel dan PHP Native.",
+      h1: "Mengelola dan melakukan kustomisasi pada LMS Moodle untuk mendukung kegiatan E-Learning.",
+      h2: "Melakukan troubleshooting hardware, jaringan, dan software untuk operasional kampus.",
+      h3: "Mengelola basis data MySQL dan melakukan backup berkala untuk keamanan data institusi.",
+      h4: "Data Support for Accreditation (AIPT): Menyiapkan dan menganalisis data akademik untuk pelaporan BAN-PT.",
+    },
+    teacher: {
+      role: "Asisten Pengajar",
+      company: "SMK Tunas Harapan Pati",
+      type: "Kontrak",
+      period: "Jan 2024 - Jun 2024",
+      location: "Pati, Jawa Tengah · On-site",
+      h0: "Membantu guru dalam kegiatan belajar mengajar mata pelajaran komputer.",
+      h1: "Membimbing siswa dalam memahami dasar-dasar pemrograman dan logika algoritma.",
+      h2: "Membantu pengawasan ujian dan praktikum di laboratorium komputer.",
+    },
+    dataEntry: {
+      role: "Data Entry Specialist",
+      company: "PT Reycom Document Solusi",
+      type: "Freelance",
+      period: "Mei 2023 - Agt 2023",
+      location: "Pati, Jawa Tengah · Hybrid",
+      h0: "Melakukan input data digital dengan tingkat akurasi tinggi dan kecepatan memenuhi target.",
+      h1: "Memastikan validitas data dan melakukan verifikasi dokumen fisik ke format digital.",
+    },
+    gameDev: {
+      role: "Game Developer Program",
+      company: "Indonesia Cyber Education Institute",
+      type: "Kontrak",
+      period: "Feb 2022 - Jul 2022",
+      location: "Remote",
+      h0: "Menyelesaikan program intensif pengembangan game dengan fokus pemrograman teknis.",
+      h1: "Memperdalam Object-Oriented Programming (OOP) dan algoritma kompleks.",
+      h2: "Berhasil menyelesaikan proyek akhir pengembangan game yang dapat dimainkan.",
+    },
+    studyGameDev: {
+      role: "Studi Independen Game Dev",
+      company: "Agate Academy",
+      type: "Kontrak",
+      period: "Agt 2021 - Jan 2022",
+      location: "Remote",
+      h0: "Terpilih sebagai peserta Studi Independen Kampus Merdeka di studio game terbesar Indonesia.",
+      h1: "Mengembangkan game prototype 2D menggunakan Unity Engine dan C#.",
+      h2: "Berkolaborasi dalam tim menggunakan metodologi GDLC dan Git/GitHub.",
+      h3: "Mengimplementasikan gameplay mechanics, fisika, dan user interface (UI).",
+    },
+  },
 }
 
 export default id

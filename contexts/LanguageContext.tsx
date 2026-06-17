@@ -7,11 +7,20 @@ import en from "@/translations/en"
 type Locale = "id" | "en"
 type Translations = typeof id
 
+// Utility type to generate dot-notation paths from the Translations object
+type NestedKeyOf<ObjectType extends object> = {
+  [Key in keyof ObjectType & (string | number)]: ObjectType[Key] extends object
+    ? `${Key}` | `${Key}.${NestedKeyOf<ObjectType[Key]>}`
+    : `${Key}`
+}[keyof ObjectType & (string | number)]
+
+export type TranslationKey = NestedKeyOf<Translations>
+
 const translations: Record<Locale, Translations> = { id, en }
 
 interface LanguageContextType {
   locale: Locale
-  t: (key: string) => string
+  t: (key: TranslationKey) => string
   toggleLanguage: () => void
 }
 
@@ -62,7 +71,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     }
   }, [locale, mounted])
 
-  const t = (key: string): string => {
+  const t = (key: TranslationKey): string => {
     return getNestedValue(translations[locale] as unknown as Record<string, unknown>, key)
   }
 

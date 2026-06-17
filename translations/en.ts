@@ -90,6 +90,80 @@ const en = {
     subtitle: "Complete collection of my work in frontend, full-stack, and game development.",
     filterAll: "All",
   },
+  projectData: {
+    lpma: {
+      description: "Quality Assurance & Accreditation Agency website with Google Form data import via API, automatic file upload to Google Drive, and REST API for data integration from other websites.",
+    },
+    cc: {
+      description: "Career Center & online counseling platform for students with Google Account login, counseling management, career information, and REST API for data retrieval from other websites.",
+    },
+    game2d: {
+      description: "2D platformer game developed as a thesis project using Unity and C# with Agile/Scrum methodology.",
+    },
+    storyshare: {
+      description: "Story sharing app (PWA) from Dicoding Front-End Web Intermediate bootcamp with offline-first, push notification, location map, and favorite story storage via IndexedDB.",
+    },
+    portfolio: {
+      description: "Personal portfolio website with smooth animations, dark theme glassmorphism, and modern responsive design built with Next.js.",
+    },
+    pmb: {
+      description: "Online Student Admission System (PMB) with registration, document upload, wave configuration, prospective student management, and online exams with real-time supervision capability.",
+    },
+  },
+  experienceData: {
+    programmer: {
+      role: "Programmer",
+      company: "STIAB Smaratungga",
+      type: "Contract",
+      period: "Aug 2024 - Present",
+      location: "Boyolali, Central Java · Hybrid",
+      h0: "Designed, developed, and maintained Academic Information Systems (SIAKAD) using Laravel and Native PHP.",
+      h1: "Managed and customized LMS Moodle to support E-Learning activities.",
+      h2: "Performed hardware, network, and software troubleshooting for campus operations.",
+      h3: "Managed MySQL databases and performed regular backups for institutional data security.",
+      h4: "Data Support for Accreditation (AIPT): Prepared and analyzed academic data for BAN-PT reporting.",
+    },
+    teacher: {
+      role: "Teaching Assistant",
+      company: "SMK Tunas Harapan Pati",
+      type: "Contract",
+      period: "Jan 2024 - Jun 2024",
+      location: "Pati, Central Java · On-site",
+      h0: "Assisted teachers in computer science teaching activities.",
+      h1: "Guided students in understanding programming fundamentals and algorithm logic.",
+      h2: "Assisted in exam supervision and lab practicals in the computer laboratory.",
+    },
+    dataEntry: {
+      role: "Data Entry Specialist",
+      company: "PT Reycom Document Solusi",
+      type: "Freelance",
+      period: "May 2023 - Aug 2023",
+      location: "Pati, Central Java · Hybrid",
+      h0: "Performed digital data entry with high accuracy and speed meeting targets.",
+      h1: "Ensured data validity and verified physical documents to digital format.",
+    },
+    gameDev: {
+      role: "Game Developer Program",
+      company: "Indonesia Cyber Education Institute",
+      type: "Contract",
+      period: "Feb 2022 - Jul 2022",
+      location: "Remote",
+      h0: "Completed an intensive game development program focusing on technical programming.",
+      h1: "Deepened understanding of Object-Oriented Programming (OOP) and complex algorithms.",
+      h2: "Successfully completed a final game development project resulting in a playable game.",
+    },
+    studyGameDev: {
+      role: "Independent Study Game Dev",
+      company: "Agate Academy",
+      type: "Contract",
+      period: "Aug 2021 - Jan 2022",
+      location: "Remote",
+      h0: "Selected as an Independent Study Kampus Merdeka participant at Indonesia's largest game studio.",
+      h1: "Developed a 2D game prototype using Unity Engine and C#.",
+      h2: "Collaborated in a team using GDLC methodology and Git/GitHub.",
+      h3: "Implemented gameplay mechanics, physics, and user interface (UI).",
+    },
+  },
 }
 
 export default en

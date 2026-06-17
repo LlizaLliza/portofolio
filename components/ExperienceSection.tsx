@@ -4,73 +4,11 @@ import { useEffect, useRef, useState } from "react"
 import { useLanguage } from "@/contexts/LanguageContext"
 
 const experiences = [
-  {
-    role: "Programmer",
-    company: "STIAB Smaratungga",
-    type: "Contract",
-    period: "Agt 2024 - Saat ini",
-    location: "Boyolali, Jawa Tengah · Hybrid",
-    color: "from-primary to-purple-400",
-    highlights: [
-      "Merancang, mengembangkan, dan memelihara Sistem Informasi Akademik (SIAKAD) menggunakan Laravel dan PHP Native.",
-      "Mengelola dan melakukan kustomisasi pada LMS Moodle untuk mendukung kegiatan E-Learning.",
-      "Melakukan troubleshooting hardware, jaringan, dan software untuk operasional kampus.",
-      "Mengelola basis data MySQL dan melakukan backup berkala untuk keamanan data institusi.",
-      "Data Support for Accreditation (AIPT): Menyiapkan dan menganalisis data akademik untuk pelaporan BAN-PT.",
-    ],
-  },
-  {
-    role: "Asisten Pengajar",
-    company: "SMK Tunas Harapan Pati",
-    type: "Contract",
-    period: "Jan 2024 - Jun 2024",
-    location: "Pati, Jawa Tengah · On-site",
-    color: "from-secondary to-cyan-400",
-    highlights: [
-      "Membantu guru dalam kegiatan belajar mengajar mata pelajaran komputer.",
-      "Membimbing siswa dalam memahami dasar-dasar pemrograman dan logika algoritma.",
-      "Membantu pengawasan ujian dan praktikum di laboratorium komputer.",
-    ],
-  },
-  {
-    role: "Data Entry Specialist",
-    company: "PT Reycom Document Solusi",
-    type: "Freelance",
-    period: "Mei 2023 - Agt 2023",
-    location: "Pati, Jawa Tengah · Hybrid",
-    color: "from-amber-500 to-orange-400",
-    highlights: [
-      "Melakukan input data digital dengan tingkat akurasi tinggi dan kecepatan memenuhi target.",
-      "Memastikan validitas data dan melakukan verifikasi dokumen fisik ke format digital.",
-    ],
-  },
-  {
-    role: "Game Developer Program",
-    company: "Indonesia Cyber Education Institute",
-    type: "Contract",
-    period: "Feb 2022 - Jul 2022",
-    location: "Remote",
-    color: "from-pink-500 to-rose-400",
-    highlights: [
-      "Menyelesaikan program intensif pengembangan game dengan fokus pemrograman teknis.",
-      "Memperdalam Object-Oriented Programming (OOP) dan algoritma kompleks.",
-      "Berhasil menyelesaikan proyek akhir pengembangan game yang dapat dimainkan.",
-    ],
-  },
-  {
-    role: "Studi Independen Game Dev",
-    company: "Agate Academy",
-    type: "Contract",
-    period: "Agt 2021 - Jan 2022",
-    location: "Remote",
-    color: "from-emerald-500 to-teal-400",
-    highlights: [
-      "Terpilih sebagai peserta Studi Independen Kampus Merdeka di studio game terbesar Indonesia.",
-      "Mengembangkan game prototype 2D menggunakan Unity Engine dan C#.",
-      "Berkolaborasi dalam tim menggunakan metodologi GDLC dan Git/GitHub.",
-      "Mengimplementasikan gameplay mechanics, fisika, dan user interface (UI).",
-    ],
-  },
+  { id: "programmer", color: "from-primary to-purple-400", highlightCount: 5 },
+  { id: "teacher", color: "from-secondary to-cyan-400", highlightCount: 3 },
+  { id: "dataEntry", color: "from-amber-500 to-orange-400", highlightCount: 2 },
+  { id: "gameDev", color: "from-pink-500 to-rose-400", highlightCount: 3 },
+  { id: "studyGameDev", color: "from-emerald-500 to-teal-400", highlightCount: 4 },
 ]
 
 export default function ExperienceSection() {
@@ -124,9 +62,10 @@ export default function ExperienceSection() {
           <div className="space-y-12">
             {experiences.map((exp, index) => {
               const isLeft = index % 2 === 0
+              const prefix = `experienceData.${exp.id}`
               return (
                 <div
-                  key={`${exp.company}-${exp.role}`}
+                  key={exp.id}
                   className={`relative flex flex-col md:flex-row items-start gap-8 transition-all duration-700 ${
                     isVisible
                       ? "opacity-100 translate-y-0"
@@ -168,34 +107,34 @@ export default function ExperienceSection() {
                         </div>
                         <div className="min-w-0">
                           <h3 className="text-lg font-semibold group-hover:text-primary transition-colors">
-                            {exp.role}
+                            {t(`${prefix}.role`)}
                           </h3>
-                          <p className="text-sm text-muted">{exp.company}</p>
+                          <p className="text-sm text-muted">{t(`${prefix}.company`)}</p>
                         </div>
                       </div>
 
                       {/* Meta */}
                       <div className="flex flex-wrap gap-2 mb-4">
                         <span className="px-2.5 py-1 text-xs font-mono rounded-md bg-primary/10 text-primary border border-primary/20">
-                          {exp.period}
+                          {t(`${prefix}.period`)}
                         </span>
                         <span className="px-2.5 py-1 text-xs font-mono rounded-md bg-white/5 text-muted border border-white/5">
-                          {exp.type}
+                          {t(`${prefix}.type`)}
                         </span>
                         <span className="px-2.5 py-1 text-xs font-mono rounded-md bg-white/5 text-muted border border-white/5">
-                          {exp.location}
+                          {t(`${prefix}.location`)}
                         </span>
                       </div>
 
                       {/* Highlights */}
                       <ul className="space-y-2">
-                        {exp.highlights.map((highlight, i) => (
+                        {Array.from({ length: exp.highlightCount }, (_, i) => (
                           <li
                             key={i}
                             className="flex items-start gap-2 text-sm text-muted leading-relaxed"
                           >
                             <span className="w-1.5 h-1.5 rounded-full bg-primary/60 mt-1.5 shrink-0" />
-                            {highlight}
+                            {t(`${prefix}.h${i}`)}
                           </li>
                         ))}
                       </ul>
@@ -210,3 +149,4 @@ export default function ExperienceSection() {
     </section>
   )
 }
+
