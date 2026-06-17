@@ -1,30 +1,20 @@
 "use client"
 
-import { useEffect, useRef, useState } from "react"
 import Image from "next/image"
 import { useLanguage } from "@/contexts/LanguageContext"
+import { useRevealOnScroll } from "@/hooks/useRevealOnScroll"
 import { projects } from "@/data/projects"
 
 export default function ProjectsSection() {
-  const [isVisible, setIsVisible] = useState(false)
-  const sectionRef = useRef<HTMLElement>(null)
+  const { ref, isVisible } = useRevealOnScroll(0.05)
   const { t } = useLanguage()
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) setIsVisible(true)
-      },
-      { threshold: 0.05 }
-    )
-    if (sectionRef.current) observer.observe(sectionRef.current)
-    return () => observer.disconnect()
-  }, [])
+
 
   return (
     <section
       id="projects"
-      ref={sectionRef}
+      ref={ref}
       className="section-padding relative"
     >
       <div className="max-w-7xl mx-auto">

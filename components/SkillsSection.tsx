@@ -1,7 +1,7 @@
 "use client"
 
-import { useEffect, useRef, useState } from "react"
 import { useLanguage } from "@/contexts/LanguageContext"
+import { useRevealOnScroll } from "@/hooks/useRevealOnScroll"
 
 const skillCategories = [
   {
@@ -60,25 +60,15 @@ const skillCategories = [
 ]
 
 export default function SkillsSection() {
-  const [isVisible, setIsVisible] = useState(false)
-  const sectionRef = useRef<HTMLElement>(null)
+  const { ref, isVisible } = useRevealOnScroll()
   const { t } = useLanguage()
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) setIsVisible(true)
-      },
-      { threshold: 0.1 }
-    )
-    if (sectionRef.current) observer.observe(sectionRef.current)
-    return () => observer.disconnect()
-  }, [])
+
 
   return (
     <section
       id="skills"
-      ref={sectionRef}
+      ref={ref}
       className="section-padding relative"
     >
       {/* Subtle background accent */}

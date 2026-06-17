@@ -1,7 +1,7 @@
 "use client"
 
-import { useEffect, useRef, useState } from "react"
 import { useLanguage } from "@/contexts/LanguageContext"
+import { useRevealOnScroll } from "@/hooks/useRevealOnScroll"
 
 const experiences = [
   { id: "programmer", color: "from-primary to-purple-400", highlightCount: 5 },
@@ -12,25 +12,15 @@ const experiences = [
 ]
 
 export default function ExperienceSection() {
-  const [isVisible, setIsVisible] = useState(false)
-  const sectionRef = useRef<HTMLElement>(null)
+  const { ref, isVisible } = useRevealOnScroll(0.05)
   const { t } = useLanguage()
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) setIsVisible(true)
-      },
-      { threshold: 0.05 }
-    )
-    if (sectionRef.current) observer.observe(sectionRef.current)
-    return () => observer.disconnect()
-  }, [])
+
 
   return (
     <section
       id="experience"
-      ref={sectionRef}
+      ref={ref}
       className="section-padding relative"
     >
       {/* Background accent */}

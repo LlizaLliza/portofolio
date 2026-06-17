@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState, FormEvent } from "react"
 import { useLanguage } from "@/contexts/LanguageContext"
+import { useRevealOnScroll } from "@/hooks/useRevealOnScroll"
 
 const FORMSPREE_ENDPOINT = "https://formspree.io/f/xwvjzqqw"
 
@@ -45,22 +46,12 @@ const contactInfo = [
 ]
 
 export default function ContactSection() {
-  const [isVisible, setIsVisible] = useState(false)
+  const { ref, isVisible } = useRevealOnScroll()
   const [formStatus, setFormStatus] = useState<FormStatus>("idle")
-  const sectionRef = useRef<HTMLElement>(null)
   const formRef = useRef<HTMLFormElement>(null)
   const { t } = useLanguage()
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) setIsVisible(true)
-      },
-      { threshold: 0.1 }
-    )
-    if (sectionRef.current) observer.observe(sectionRef.current)
-    return () => observer.disconnect()
-  }, [])
+
 
   // Auto-reset status setelah 5 detik
   useEffect(() => {
@@ -97,7 +88,7 @@ export default function ContactSection() {
   return (
     <section
       id="contact"
-      ref={sectionRef}
+      ref={ref}
       className="section-padding relative"
     >
       {/* Background accent */}

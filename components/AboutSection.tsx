@@ -1,11 +1,10 @@
 "use client"
 
-import { useEffect, useRef, useState } from "react"
 import { useLanguage } from "@/contexts/LanguageContext"
+import { useRevealOnScroll } from "@/hooks/useRevealOnScroll"
 
 export default function AboutSection() {
-  const [isVisible, setIsVisible] = useState(false)
-  const sectionRef = useRef<HTMLElement>(null)
+  const { ref, isVisible } = useRevealOnScroll()
   const { t } = useLanguage()
 
   const stats = [
@@ -15,19 +14,10 @@ export default function AboutSection() {
     { label: t("about.statCerts"), value: "5+" },
   ]
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) setIsVisible(true)
-      },
-      { threshold: 0.1 }
-    )
-    if (sectionRef.current) observer.observe(sectionRef.current)
-    return () => observer.disconnect()
-  }, [])
+
 
   return (
-    <section id="about" ref={sectionRef} className="section-padding relative">
+    <section id="about" ref={ref} className="section-padding relative">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div
