@@ -1,6 +1,6 @@
 "use client"
 
-import { useLanguage } from "@/contexts/LanguageContext"
+import { useLanguage, type TranslationKey } from "@/contexts/LanguageContext"
 import { useRevealOnScroll } from "@/hooks/useRevealOnScroll"
 
 const experiences = [
@@ -97,22 +97,22 @@ export default function ExperienceSection() {
                         </div>
                         <div className="min-w-0">
                           <h3 className="text-lg font-semibold group-hover:text-primary transition-colors">
-                            {t(`${prefix}.role`)}
+                            {t(`${prefix}.role` as TranslationKey)}
                           </h3>
-                          <p className="text-sm text-muted">{t(`${prefix}.company`)}</p>
+                          <p className="text-sm text-muted">{t(`${prefix}.company` as TranslationKey)}</p>
                         </div>
                       </div>
 
                       {/* Meta */}
                       <div className="flex flex-wrap gap-2 mb-4">
                         <span className="px-2.5 py-1 text-xs font-mono rounded-md bg-primary/10 text-primary border border-primary/20">
-                          {t(`${prefix}.period`)}
+                          {t(`${prefix}.period` as TranslationKey)}
                         </span>
                         <span className="px-2.5 py-1 text-xs font-mono rounded-md bg-white/5 text-muted border border-white/5">
-                          {t(`${prefix}.type`)}
+                          {t(`${prefix}.type` as TranslationKey)}
                         </span>
                         <span className="px-2.5 py-1 text-xs font-mono rounded-md bg-white/5 text-muted border border-white/5">
-                          {t(`${prefix}.location`)}
+                          {t(`${prefix}.location` as TranslationKey)}
                         </span>
                       </div>
 
@@ -124,7 +124,7 @@ export default function ExperienceSection() {
                             className="flex items-start gap-2 text-sm text-muted leading-relaxed"
                           >
                             <span className="w-1.5 h-1.5 rounded-full bg-primary/60 mt-1.5 shrink-0" />
-                            {t(`${prefix}.h${i}`)}
+                            {t(`${prefix}.h${i}` as TranslationKey)}
                           </li>
                         ))}
                       </ul>

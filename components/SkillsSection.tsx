@@ -1,6 +1,6 @@
 "use client"
 
-import { useLanguage } from "@/contexts/LanguageContext"
+import { useLanguage, type TranslationKey } from "@/contexts/LanguageContext"
 import { useRevealOnScroll } from "@/hooks/useRevealOnScroll"
 
 const skillCategories = [
@@ -111,7 +111,7 @@ export default function SkillsSection() {
                 >
                   {category.icon}
                 </div>
-                <h3 className="text-lg font-semibold">{t(category.titleKey)}</h3>
+                <h3 className="text-lg font-semibold">{t(category.titleKey as TranslationKey)}</h3>
               </div>
 
               {/* Skill Tags */}
