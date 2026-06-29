@@ -79,6 +79,12 @@ const id = {
     formSuccess: "Pesan berhasil terkirim! Terima kasih, saya akan segera membalas.",
     formError: "Gagal mengirim pesan. Silakan coba lagi atau hubungi langsung via email.",
   },
+  error: {
+    title: "Terjadi Kesalahan",
+    fallback: "Terjadi kesalahan yang tidak terduga. Silakan coba lagi.",
+    tryAgain: "Coba Lagi",
+    backHome: "Kembali ke Home",
+  },
   footer: {
     tagline: "Web Developer & IT Specialist.",
     copyright: "Portfolio. All rights reserved. Built with",

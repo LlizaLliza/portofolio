@@ -79,6 +79,12 @@ const en = {
     formSuccess: "Message sent successfully! Thank you, I'll get back to you soon.",
     formError: "Failed to send message. Please try again or contact me directly via email.",
   },
+  error: {
+    title: "Something went wrong",
+    fallback: "An unexpected error occurred. Please try again.",
+    tryAgain: "Try Again",
+    backHome: "Back to Home",
+  },
   footer: {
     tagline: "Web Developer & IT Specialist.",
     copyright: "Portfolio. All rights reserved. Built with",

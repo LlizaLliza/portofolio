@@ -27,22 +27,22 @@ export default function ErrorBoundary({
             <path d="M12 17h.01"/>
           </svg>
         </div>
-        <h2 className="text-2xl font-bold mb-3">Something went wrong</h2>
+        <h2 className="text-2xl font-bold mb-3">{t("error.title")}</h2>
         <p className="text-muted text-sm mb-8 leading-relaxed">
-          {error.message || "An unexpected error occurred. Please try again."}
+          {error.message || t("error.fallback")}
         </p>
         <div className="flex flex-col sm:flex-row gap-3 justify-center">
           <button
             onClick={() => reset()}
             className="btn-primary py-2.5 text-sm"
           >
-            Try Again
+            {t("error.tryAgain")}
           </button>
           <a
             href="/"
             className="btn-secondary py-2.5 text-sm"
           >
-            Back to Home
+            {t("error.backHome")}
           </a>
         </div>
       </div>
