@@ -81,7 +81,13 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
 
   return (
     <LanguageContext.Provider value={{ locale, t, toggleLanguage }}>
-      {children}
+      <div
+        className={`transition-opacity duration-300 ${
+          mounted ? "opacity-100" : "opacity-0"
+        }`}
+      >
+        {children}
+      </div>
     </LanguageContext.Provider>
   )
 }

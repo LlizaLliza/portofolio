@@ -49,11 +49,13 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // suppressHydrationWarning on <html> only: lang attribute is updated
+  // client-side by LanguageContext after mount. This is standard Next.js
+  // practice and also guards against browser extension attribute injection.
   return (
     <html lang="id" className="scroll-smooth" suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background text-foreground`}
-        suppressHydrationWarning
       >
         <LanguageProvider>
           <Navbar />
